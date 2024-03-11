@@ -1,0 +1,204 @@
+.main{
+    flex: 1;
+    min-height: 100vh;
+    padding-bottom: 15vh;
+    position: relative;
+}
+
+.main .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    padding: 10px;
+    padding-left: 50px;
+    color: rgb(89, 92, 91);
+
+}
+
+.avatar{
+    width: 50px;
+}
+
+.nav p{
+    font-size: 20px;
+}
+
+.main .nav .img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.main-container{
+    max-width: 900px;
+    margin: auto;
+}
+
+.main .greet{
+    margin: 50px 0px;
+    font-size: 56px;
+    color: rgb(189, 189, 189);
+    font-weight: 500;
+    padding: 20px;
+}
+
+.main .greet span{
+    background: -webkit-linear-gradient(16deg, rgb(113, 186, 253), rgb(255, 0, 149)); /* se usa para aplicar un degradado lineal como fondo de texto */
+    -webkit-background-clip: text; /* se utiliza para definir cómo el fondo se recorta en relación con el contenido, y en este caso, se establece en text para que el degradado se limite al texto. Finalmente */
+    -webkit-text-fill-color: transparent; /* se usa para definir el color del texto, en este caso se establece en transparent para que el texto sea transparente y el degradado se muestre a través de él. */
+}
+/* Es importante mencionar que el uso de prefijos específicos del motor como -webkit puede ser necesario para garantizar la compatibilidad con navegadores específicos */
+
+.main .cards{
+    display: grid;  /* Esto establece el contenedor como una cuadrícula. Permite organizar los elementos secundarios (hijos) en filas y columnas. */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));  /* Esta línea establece el tamaño y la disposición de las columnas en la cuadrícula. Utiliza la función repeat() para repetir el patrón de columnas y la función auto-fill para rellenar el contenedor con tantas columnas como sea posible sin desbordarlo. La función minmax() define el tamaño mínimo y máximo de cada columna */
+    gap: 15px;
+    padding: 20px;
+}
+
+.main .card{
+    height: 200px;
+    padding: 15px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+
+.main .card img{
+    width: 30px;
+    padding: 5px;
+    position: absolute;
+   
+    border-radius: 5px;
+    bottom: 10px;
+    right: 10px;
+}
+
+.main .card p{
+    color: rgb(112, 111, 111);
+    font-size: 17px;
+}
+
+.main .card:hover{
+    background-color: rgb(228, 227, 227);
+}
+
+.main-bottom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 900px;
+    padding: 0px 20px;
+    margin: auto;
+}
+
+.search-box{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 20px;
+   background-color: rgb(232, 233, 235);
+   padding: 10px 20px;
+   border-radius: 50px;
+}
+
+.search-box img{
+    width: 24px;
+    cursor: pointer;
+}
+
+.search-box input{
+    flex: 1; /*  es comúnmente utilizado para hacer que los elementos flexibles dentro de un contenedor Flexbox se expandan para ocupar todo el espacio disponible, lo que facilita la creación de diseños flexibles y adaptables. */
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.search-box div{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.main .bottom-info{
+    font-size: 13px;
+    margin: 15px auto; /* 15px: Establece un margen de 15 píxeles en la parte superior e inferior del elemento. Auto: Este valor especifica que el navegador debe calcular automáticamente el margen izquierdo y derecho del elemento para que esté centrado horizontalmente dentro de su contenedor. */
+    text-align: center;
+    font-weight: 300;
+}
+
+.result{
+    padding: 0px 5%;
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+.result-title{
+    margin: 40px 0px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.result img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.result-data{
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+
+.loader{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loader hr{
+    border-radius: 7px;
+    border: none;
+    background-color: rgb(134, 134, 134);
+    background: linear-gradient(to right, rgb(212, 201, 219), rgb(180, 207, 233), rgb(227, 202, 233));
+    background-size: 800px 50px;
+    height: 10px;
+    animation: loader 3s infinite linear;
+}
+
+.result-data p{
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+@keyframes loader {
+    0%{
+        background-position: -800px 0px;
+    }
+    100%{
+        background-position: 800px 0px;
+    }
+}
+
+@media (max-width:600px){
+    .main-bottom input{
+        flex: none;
+        width: 150px;
+    }
+    .main-bottom img{
+        width: 20px;
+    }
+    .search-box {
+        padding: 5px 10px;
+    }
+    .search-box div{
+        gap: 5px;
+    }
+
+}
